@@ -18,7 +18,7 @@ function migrate(d){
  const normalize=arr=>[...new Set(arr.map(translate).filter(t=>t&&t!=='Notes'&&t!=='Extra Qs'))];
  d.labels=normalize(d.labels);
  d.chapters=d.chapters.map(c=>({...c,
-  name:c.id==='p1'?'Basic Maths':c.id==='p0'?'Units and Measurements':c.id==='m0'?'Basic Mathematics':c.name,
+  name:c.id==='p1'?'Mathematical Tools':c.id==='p0'?'Units and Measurements':c.id==='m0'?'Basic Mathematics':c.name,
   ...(c.tasks?{tasks:normalize(c.tasks)}:{})
  }));
  const first=d.chapters.findIndex(c=>c.id==='p1');
